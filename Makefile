@@ -1,7 +1,6 @@
-DASHBINDIR=./dashcore-0.12.2/bin
-DASHD=${DASHBINDIR}/dashd
-DASHGUI=${DASHBINDIR}/dash-qt
-DASHCLI=${DASHBINDIR}/dash-cli
+DASHD=digitalcoind
+DASHGUI=digitalcoin-qt
+DASHCLI=digitalcoin-cli
 B1_FLAGS=
 B2_FLAGS=
 B1=-datadir=1 $(B1_FLAGS)
@@ -10,10 +9,6 @@ BLOCKS=1
 ADDRESS=
 AMOUNT=
 ACCOUNT=
-
-download:
-	wget 'https://github.com/dashpay/dash/releases/download/v0.12.2.3/dashcore-0.12.2.3-linux64.tar.gz'
-	tar xvzf dashcore-0.12.2.3-linux64.tar.gz
 
 start:
 	$(DASHD) $(B1) -daemon
